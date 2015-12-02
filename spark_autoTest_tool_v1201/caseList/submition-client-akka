@@ -9,20 +9,23 @@ source ./lib/public.workload
 ./scenario/scenario_fifo_conf 
 
 #case name
-casename=submition-client-akka
+#caseName=submition-client-akka
 
 #run case
-echo "$casename - begin" 
-echo "$casename - sbumit job"
+echo "$caseName - begin" 
+echo "$caseName - sbumit job"
 $SPARK_HOME/bin/spark-submit --conf spark.master=spark://$SMASTER_HNAME:7077 --deploy-mode client --class job.submit.control.submitSleepTasks $SLEEPJAR 3 6000 &>> $caseLogDir/tmpOut &
 sleep 25
 jobStatus=`getJobStatus $caseLogDir/tmpOut "Job done"`
-echo "$casename - job status: $jobStatus"
-echo "$casename - write report"
+echo "$caseName - job status: $jobStatus"
+echo "$caseName - write report"
 if [ -z "$jobStatus" ]; then
-    echo "--- $casename, job cannot finish, failed.">> $testReport
+    echo "--- $caseName, job cannot finish, failed.">> $testReport
 elif [ -n "$jobStatus" ]; then
-    echo "--- $casename, job done, passed." >> $testReport
+    echo "--- $caseName, job done, passed." >> $testReport
 fi	
-echo "$casename - end" 
+cat $SPARK_HOME/conf/spark-env.sh
+cat $SPARK_HOME/conf/spark-defaults.conf 
+echo "$caseName - end" 
 
+recoverAndExit 0;

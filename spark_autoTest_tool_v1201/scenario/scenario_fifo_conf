@@ -27,4 +27,4 @@ restartMasterBySparkShell
 sleep 10
 echo "$scenarioName - check if policy configured take effect"
 checkPolicyTakeEffect "fifo"
-
+echo "--------------------------"

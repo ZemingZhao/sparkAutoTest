@@ -39,14 +39,17 @@ echo "please find case list at $reportDir/caseList"
 echo "please find detail case log under $reportDir/logs/"
 
 ### run cases
+
 cat $reportDir/caseList | while read caseScript; do
+    echo "$caseScript is running."
     if [[ ! -d $reportDir/logs/$caseScript || ! -x $reportDir/logs/$caseScript ]]; then
        mkdir -p $reportDir/logs/$caseScript
     fi
     export caseLogDir=$reportDir/logs/$caseScript
-    #caseLogDir=$reportDir/logs/$caseScript
+    export caseName="$caseScript"
     ./$caseScript  1> $caseLogDir/stdout 2> $caseLogDir/stderr
-    #$caseScript $reportDir  1> $reportDir/logs/$caseScript/stdout 2>$reportDir/logs/$caseScript/stderr
+    #echo "--- $caseName; $caseReason; $caseResult" >> $testReport
+    #writeCaseResultToReport $caseScript $caseReason $caseResult  #failed, too many parameter than expected.
 done
 
 # Statistic Case Result
