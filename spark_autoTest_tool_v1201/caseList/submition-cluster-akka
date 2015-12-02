@@ -6,10 +6,10 @@ source ./lib/public.framework
 source ./lib/public.workload
 
 #run scenario
-#./scenario/scenario_fifo_conf 
+./scenario/scenario_fifo_conf 
 
 #case name
-caseName=submition-cluster-akka
+#caseName=submition-cluster-akka
 
 #run case
 echo "$caseName - begin" 
