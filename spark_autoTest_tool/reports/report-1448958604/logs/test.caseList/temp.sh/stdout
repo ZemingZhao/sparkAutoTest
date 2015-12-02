@@ -1,0 +1,12 @@
+scenario_fifo - backup spark conf files
+scenario_fifo - update spark conf
+scenario_fifo - make new conf take effect
+stopping org.apache.spark.deploy.master.Master
+starting org.apache.spark.deploy.master.Master, logging to /scratch/qa1/zmzhao/spark/workshop_141/spark-1.4.1-bin-hadoop2.6/sbin/../logs/spark-root-org.apache.spark.deploy.master.Master-1-zmzhao05.eng.platformlab.ibm.com.out
+scenario_fifo - check if policy configured take effect
+policy fifo take effect.
+--- submition-cluster-restful begin ---
+- app was submitted.
+- driver name: 
+- empty output, case failed.
+--- submition-cluster-restful done ---

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#source env
+source ./environment.conf
+source ./lib/public.framework
+source ./lib/public.workload
+
+#run scenario
+./scenario/scenario_xxx 
+
+#case name
+casename=xxx-xxx
+
+#run case
+echo "$casename - begin" 
+echo "$casename - sbumit job"
+#$SPARK_HOME/bin/spark-submit --conf spark.master=spark://$SMASTER_HNAME:7077 --deploy-mode client --class job.submit.control.submitSleepTasks $SLEEPJAR 3 6000 &>> $caseLogDir/tmpOut &
+echo "$casename - waite case done"
+#sleep 25
+echo "$casename - check result"
+#jobStatus=`getJobStatus $caseLogDir/tmpOut "Job done"`
+#echo "$casename - job status: $jobStatus"
+echo "$casename - write report"
+#if [ -z "$jobStatus" ]; then
+#    echo "--- $casename, job cannot finish, failed.">> $testReport
+#elif [ -n "$jobStatus" ]; then
+#    echo "--- $casename, job done, passed." >> $testReport
+#fi	
+echo "$casename - end" 
+

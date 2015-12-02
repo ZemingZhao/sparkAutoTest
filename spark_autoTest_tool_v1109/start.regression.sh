@@ -11,11 +11,11 @@
 ### source ENV 
 source ./environment.conf
 ### source public function
-source ./lib/public.framework
+source ./lib/public.func
 ### validaty check,  create report and logs dir
 if [[ -z "$1" || -n $2 ]]; then
    echo " Usage: There're two modes to run this tools."
-   echo "        Regression  Mode:  $0 Case_Group_Dir"
+   echo "        Regression  Mode:  $0 Script_List_Diri"
    echo "                           such as: $0 ./caseList"
    echo "        Single file Mode:  $0 Script_Case_File"
    echo "                           such as: $0 ./caseList/xx.sh"
@@ -23,32 +23,29 @@ if [[ -z "$1" || -n $2 ]]; then
 elif [[ ! -x $1 ]]; then
    echo "please make sure $1 has executale right."
    exit 1
+else
+   createReport
+   echo "please find report at $reportDir/testReport.txt"
+   echo "please find detail case log under $reportDir/logs/"
 fi
-
-### create report, export reportDir testReport
-createReportDir
-echo "please find report at $reportDir/testReport.txt"
-
 ### write report tile, including begin date
-writeReportTitle
-
-### create case list
-### Note: all executable file under $1 will be treated as a case
-createCaseList $1
-echo "please find case list at $reportDir/caseList"
-echo "please find detail case log under $reportDir/logs/"
-
-### run cases
-cat $reportDir/caseList | while read caseScript; do
-    if [[ ! -d $reportDir/logs/$caseScript || ! -x $reportDir/logs/$caseScript ]]; then
-       mkdir -p $reportDir/logs/$caseScript
-    fi
-    export caseLogDir=$reportDir/logs/$caseScript
-    #caseLogDir=$reportDir/logs/$caseScript
-    ./$caseScript  1> $caseLogDir/stdout 2> $caseLogDir/stderr
-    #$caseScript $reportDir  1> $reportDir/logs/$caseScript/stdout 2>$reportDir/logs/$caseScript/stderr
-done
-
+writeReportTitle 
+if [[ -d $1 ]]; then
+   for caseScript in `ls $1/`   
+   do
+      if [[ ! -x $1/$caseScript  ]]; then
+         echo "please make sure $1/$caseScript has executale right."
+      else
+          $1/$caseScript $reportDir 1> $reportDir/logs/$caseScript.stdout 2>$reportDir/logs/$caseScript.stderr
+#         $1/$caseScript $reportDir 1>>stdout 2>>stderr
+      fi
+   done
+elif [[ -f $1 ]]; then
+   $1 $reportDir
+else
+   echo "please make sure $1 exists."
+   exit 1
+fi
 # Statistic Case Result
 writeReportStatistic
 

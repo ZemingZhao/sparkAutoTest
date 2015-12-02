@@ -1,0 +1,20 @@
+---------------------------------------------------------------------
+
+                      Regression Test Report       
+
+---------------------------------------------------------------------
+     Ego Version: Platform EGO 3.3.0.0 build 214001, Sep 05 2015
+     SparkOnEgo Version: Build 338418, Nov 26 2015
+     Date:  Tue Dec 1 08:21:17 EST 2015
+---------------------------------------------------------------------
+--- submition-client-akka, job cannot finish, failed.
+--- submition-cluster-akka, job cannot finish, failed.
+--- submition-cluster-restful, job cannot finish, failed.
+----------------------------------------------------------------------
+
+     Total: 3
+     Passed: 0
+     Failed: 3
+     Pass Rate: 0.00%
+
+----------------------------------------------------------------------

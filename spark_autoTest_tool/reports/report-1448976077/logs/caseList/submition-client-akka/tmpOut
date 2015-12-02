@@ -1,0 +1,80 @@
+15/12/01 08:21:34 INFO SparkContext: Running Spark version 1.4.1
+15/12/01 08:21:34 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/12/01 08:21:35 INFO SecurityManager: Changing view acls to: root
+15/12/01 08:21:35 INFO SecurityManager: Changing modify acls to: root
+15/12/01 08:21:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/01 08:21:36 INFO Slf4jLogger: Slf4jLogger started
+15/12/01 08:21:36 INFO Remoting: Starting remoting
+15/12/01 08:21:36 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@9.21.61.186:38991]
+15/12/01 08:21:36 INFO Utils: Successfully started service 'sparkDriver' on port 38991.
+15/12/01 08:21:36 INFO SparkEnv: Registering MapOutputTracker
+15/12/01 08:21:36 INFO SparkEnv: Registering BlockManagerMaster
+15/12/01 08:21:37 INFO DiskBlockManager: Created local directory at /tmp/spark-fe37d610-ff85-4320-a355-7a502ec793c6/blockmgr-30e12d8a-6cbf-4d8a-9e50-f63621b84ea5
+15/12/01 08:21:37 INFO MemoryStore: MemoryStore started with capacity 265.0 MB
+15/12/01 08:21:37 INFO HttpFileServer: HTTP File server directory is /tmp/spark-fe37d610-ff85-4320-a355-7a502ec793c6/httpd-64d7c480-20b4-485d-a9fa-3c8908cd9364
+15/12/01 08:21:37 INFO HttpServer: Starting HTTP Server
+15/12/01 08:21:37 INFO Utils: Successfully started service 'HTTP file server' on port 59061.
+15/12/01 08:21:37 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/01 08:21:37 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/01 08:21:37 INFO SparkUI: Started SparkUI at http://9.21.61.186:4040
+15/12/01 08:21:37 INFO SparkContext: Added JAR file:/scratch/qa1/zmzhao/spark/workshop_141/spark-1.4.1-bin-hadoop2.6/spark_autoTest_tool/autoTestExamples.jar at http://9.21.61.186:59061/jars/autoTestExamples.jar with timestamp 1448976097715
+15/12/01 08:21:37 INFO EGOFineGrainedSchedulerBackend: setting reserve=0, priority=1, limit=2147483647,  master=spark://zmzhao05.eng.platformlab.ibm.com:7077
+15/12/01 08:21:37 INFO EGOAppClient$ClientActor: Connecting to master akka.tcp://sparkMaster@zmzhao05.eng.platformlab.ibm.com:7077/user/Master...
+15/12/01 08:21:38 INFO EGOFineGrainedSchedulerBackend: Connected to Spark cluster with app ID app-20151201082138-0000-7eb5d5b3-0fb6-44de-875e-d1105c7f0aa7
+15/12/01 08:21:38 INFO EGOFineGrainedSchedulerBackend: Application registered successfully as app-20151201082138-0000-7eb5d5b3-0fb6-44de-875e-d1105c7f0aa7
+15/12/01 08:21:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 48386.
+15/12/01 08:21:38 INFO NettyBlockTransferService: Server created on 48386
+15/12/01 08:21:38 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/01 08:21:38 INFO BlockManagerMasterEndpoint: Registering block manager 9.21.61.186:48386 with 265.0 MB RAM, BlockManagerId(driver, 9.21.61.186, 48386)
+15/12/01 08:21:38 INFO BlockManagerMaster: Registered BlockManager
+15/12/01 08:21:38 INFO EGOClusterDriverWrapper: Setting sparkContextRef
+15/12/01 08:21:38 INFO EGOClusterScheduler: EGOScheduler postStartHook done
+15/12/01 08:21:39 INFO SparkContext: Starting job: count at submitSleepTasks.scala:32
+15/12/01 08:21:39 INFO DAGScheduler: Got job 0 (count at submitSleepTasks.scala:32) with 3 output partitions (allowLocal=false)
+15/12/01 08:21:39 INFO DAGScheduler: Final stage: ResultStage 0(count at submitSleepTasks.scala:32)
+15/12/01 08:21:39 INFO DAGScheduler: Parents of final stage: List()
+15/12/01 08:21:39 INFO DAGScheduler: Missing parents: List()
+15/12/01 08:21:39 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at map at submitSleepTasks.scala:32), which has no missing parents
+15/12/01 08:21:39 INFO EGOFineGrainedSchedulerBackend: onStageSubmitted: stageId(0)
+15/12/01 08:21:39 INFO MemoryStore: ensureFreeSpace(1872) called with curMem=0, maxMem=277842493
+15/12/01 08:21:39 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1872.0 B, free 265.0 MB)
+15/12/01 08:21:39 INFO MemoryStore: ensureFreeSpace(1259) called with curMem=1872, maxMem=277842493
+15/12/01 08:21:39 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1259.0 B, free 265.0 MB)
+15/12/01 08:21:39 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 9.21.61.186:48386 (size: 1259.0 B, free: 265.0 MB)
+15/12/01 08:21:39 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:874
+15/12/01 08:21:39 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at submitSleepTasks.scala:32)
+15/12/01 08:21:39 INFO EGOClusterScheduler: Adding task set 0.0 with 3 tasks
+15/12/01 08:21:39 INFO EGOFineGrainedSchedulerBackend: <EVENT> Spark driver SPARKDRIVER:4a78b391-3f42-4e3d-85c7-45e17fb5e72a workload coming in
+15/12/01 08:21:46 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, zmzhao05.eng.platformlab.ibm.com, PROCESS_LOCAL, 1429 bytes)
+15/12/01 08:21:46 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, zmzhao05.eng.platformlab.ibm.com, PROCESS_LOCAL, 1429 bytes)
+15/12/01 08:21:46 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, zmzhao05.eng.platformlab.ibm.com, PROCESS_LOCAL, 1486 bytes)
+15/12/01 08:21:47 INFO BlockManagerMasterEndpoint: Registering block manager zmzhao05.eng.platformlab.ibm.com:35857 with 265.0 MB RAM, BlockManagerId(a83a32ec-2b90-4749-ba58-f5600497afc7, zmzhao05.eng.platformlab.ibm.com, 35857)
+15/12/01 08:21:48 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on zmzhao05.eng.platformlab.ibm.com:35857 (size: 1259.0 B, free: 265.0 MB)
+15/12/01 08:21:54 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 7363 ms on zmzhao05.eng.platformlab.ibm.com (1/3)
+15/12/01 08:21:54 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 7378 ms on zmzhao05.eng.platformlab.ibm.com (2/3)
+15/12/01 08:21:54 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 7417 ms on zmzhao05.eng.platformlab.ibm.com (3/3)
+15/12/01 08:21:54 INFO EGOClusterScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/01 08:21:54 INFO DAGScheduler: ResultStage 0 (count at submitSleepTasks.scala:32) finished in 14.670 s
+15/12/01 08:21:54 INFO DAGScheduler: Job 0 finished: count at submitSleepTasks.scala:32, took 15.017884 s
+Job done: 3 tasks each has run 6000 ms.
+appName: Spark Pi
+app Lication Id: app-20151201082138-0000-7eb5d5b3-0fb6-44de-875e-d1105c7f0aa7
+test done.
+15/12/01 08:21:54 INFO EGOFineGrainedSchedulerBackend: onStageCompleted: stageId(0)
+15/12/01 08:21:54 INFO EGOFineGrainedSchedulerBackend: hosts Set(zmzhao05.eng.platformlab.ibm.com) need to delete the cache data for application[%s] app-20151201082138-0000-7eb5d5b3-0fb6-44de-875e-d1105c7f0aa7
+15/12/01 08:21:54 INFO EGOFineGrainedSchedulerBackend: Waiting for rpc request receive the response.
+15/12/01 08:21:54 WARN QueuedThreadPool: 7 threads could not be stopped
+15/12/01 08:21:54 INFO SparkUI: Stopped Spark web UI at http://9.21.61.186:4040
+15/12/01 08:21:54 INFO DAGScheduler: Stopping DAGScheduler
+15/12/01 08:21:54 INFO EGOClusterScheduler: EGOScheduler stops
+15/12/01 08:21:54 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/01 08:21:54 INFO Utils: path = /tmp/spark-fe37d610-ff85-4320-a355-7a502ec793c6/blockmgr-30e12d8a-6cbf-4d8a-9e50-f63621b84ea5, already present as root for deletion.
+15/12/01 08:21:54 INFO MemoryStore: MemoryStore cleared
+15/12/01 08:21:54 INFO BlockManager: BlockManager stopped
+15/12/01 08:21:54 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/01 08:21:54 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/01 08:21:54 INFO SparkContext: Successfully stopped SparkContext
+15/12/01 08:21:54 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+15/12/01 08:21:54 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+15/12/01 08:21:54 INFO Utils: Shutdown hook called
+15/12/01 08:21:54 INFO Utils: Deleting directory /tmp/spark-fe37d610-ff85-4320-a355-7a502ec793c6

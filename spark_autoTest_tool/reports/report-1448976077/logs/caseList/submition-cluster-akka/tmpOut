@@ -1,0 +1,9 @@
+Running Spark using the REST application submission protocol.
+15/12/01 08:22:14 INFO RestSubmissionClient: Submitting a request to launch an application in spark://zmzhao05.eng.platformlab.ibm.com:7077.
+15/12/01 08:22:14 WARN RestSubmissionClient: Unable to connect to server spark://zmzhao05.eng.platformlab.ibm.com:7077.
+Warning: Master endpoint spark://zmzhao05.eng.platformlab.ibm.com:7077 was not a REST server. Falling back to legacy submission gateway instead.
+15/12/01 08:22:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Driver successfully submitted as driver-20151201082216-0000-8a0ba0db-6771-4876-afb8-4153c99f5b37
+... waiting before polling master for driver state
+... polling master for driver state
+State of driver-20151201082216-0000-8a0ba0db-6771-4876-afb8-4153c99f5b37 is RUNNING

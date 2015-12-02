@@ -1,0 +1,58 @@
+#!/bin/sh
+
+###############################
+###   common function  
+###############################
+function getAkkaDriverStatus ()
+{
+   if [[ -n $1 ]]; then
+      driverStatus=`grep "driver-" $1 | awk '/State of/ {print $NF}'`
+      #echo "driver success to submit: $driverStatus"
+      echo $driverStatus
+   else
+      echo "error: $0: please specify a file."
+      recoverAndExit 1;
+   fi 
+} 
+function getRestApiDriverStatus ()
+{
+   if [[ -n $1 ]]; then 
+      driverStatus=`cat $1 | awk '/\"success\"/ {print $3}'`
+      #echo "driver success to submit: $driverStatus"
+      echo $driverStatus
+   else
+      echo "error: $0: please specify a file."
+      recoverAndExit 1;
+   fi
+}
+function getAkkaDriverName ()
+{
+   if [[ -n $1 ]]; then
+      drivername=`grep "driver-" $1 | awk '/State of/  {print $3}'`
+      #echo "driver name: $drivername" 
+      echo $drivername
+   else
+      echo "error: $0: please specify a file."
+      recoverAndExit 1;
+   fi
+}
+function getRestApiDriverName ()
+{
+   if [[ -n $1 ]]; then
+     drivername=`sed 's/\"//g' $1 | sed 's/,//g' | awk '/submissionId/  {print $3}'`
+     #echo "driver name: $drivername" 
+     echo $drivername
+   else
+      echo "error: $0: please specify a file."
+      recoverAndExit 1;
+   fi
+}
+function getJobStatus ()
+{
+   if [[ ! -f $1 || -z $2 ]]; then
+      echo "error: $0: please specify file and key word."
+      recoverAndExit 1;
+   fi
+   jobStatus=`grep "$2" $1`
+   echo $jobStatus
+}

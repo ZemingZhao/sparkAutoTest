@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#source env
+source ./environment.conf
+source ./lib/public.framework
+source ./lib/public.workload
+
+#run scenario
+./scenario/scenario_fifo_conf 
+
+#case name
+casename=submition-cluster-restful
+
+#run case
+echo "$casename - begin" 
+echo "$casename - sbumit job"
+#$SPARK_HOME/bin/spark-submit --conf spark.master=spark://$SMASTER_HNAME:6066 --deploy-mode cluster  --class job.submit.control.submitSleepTasks $SLEEPJAR 3 6000 >>  $caseLogDir/stdout 2>> $caseLogDir/stderr
+$SPARK_HOME/bin/spark-submit --conf spark.master=spark://$SMASTER_HNAME:6066 --deploy-mode cluster  --class job.submit.control.submitSleepTasks $SLEEPJAR 3 6000 &>>  $caseLogDir/tmpOut
+sleep 5
+driverStatus=`getRestApiDriverStatus $caseLogDir/tmpOut`
+echo "$casename - driver success to submit: $driverStatus"
+drivername=`getRestApiDriverName $caseLogDir/tmpOut`
+echo "$casename - driver name: $drivername" 
+sleep 20
+jobStatus=`getJobStatus $SPARK_HOME/work/$drivername/stdout "Job done"`
+echo "$casename - job status: $jobStatus"
+echo "$casename - write report"
+if [ -z "$jobStatus" ]; then
+    echo "--- $casename, job cannot finish, failed.">> $testReport
+elif [ -n "$jobStatus" ]; then
+    echo "--- $casename, job done, passed." >> $testReport
+fi	
+echo "$casename - end" 
+
