@@ -1,0 +1,13 @@
+case filter was meeted: 1 == 1.
+scenario_fifo - backup spark conf files
+scenario_fifo - update spark conf
+scenario_fifo - make new conf take effect
+stopping org.apache.spark.deploy.master.Master
+starting org.apache.spark.deploy.master.Master, logging to /gpfs_fqi/zmzhao/spark-v1.5.2-hadoop2.6/sbin/../logs/spark-root-org.apache.spark.deploy.master.Master-1-red05.out
+scenario_fifo - check if policy configured take effect
+policy fifo take effect.
+--------------------------
+caseList/case_template - begin
+caseList/case_template - sbumit job
+caseList/case_template - write report
+caseList/case_template - end

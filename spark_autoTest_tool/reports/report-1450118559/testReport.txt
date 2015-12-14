@@ -1,0 +1,22 @@
+---------------------------------------------------------------------
+
+                      Regression Test Report       
+
+---------------------------------------------------------------------
+     Ego Version: Platform EGO 3.1.0.0 build 335711, May 28 2015
+     SparkOnEgo Version: Build 338418, Dec 02 2015
+     Date:  Mon Dec 14 13:42:39 EST 2015
+---------------------------------------------------------------------
+caseList/case_template Pass 
+caseList/submition-client-akka Pass 
+caseList/submition-cluster-akka Pass 
+caseList/submition-cluster-restful Pass 
+----------------------------------------------------------------------
+
+     Total: 4
+     Pass: 4
+     Fail: 0
+     Timeout: 0
+     Pass Rate(Pass/<Fail+Timeout>): 100.00%
+
+----------------------------------------------------------------------

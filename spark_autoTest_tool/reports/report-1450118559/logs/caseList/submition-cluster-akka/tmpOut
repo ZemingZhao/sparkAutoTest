@@ -1,0 +1,14 @@
+Running Spark using the REST application submission protocol.
+15/12/14 13:44:16 INFO RestSubmissionClient: Submitting a request to launch an application in spark://red05:7077.
+15/12/14 13:44:17 WARN RestSubmissionClient: Unable to connect to server spark://red05:7077.
+Warning: Master endpoint spark://red05:7077 was not a REST server. Falling back to legacy submission gateway instead.
+15/12/14 13:44:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/12/14 13:44:17 INFO SecurityManager: Changing view acls to: root
+15/12/14 13:44:17 INFO SecurityManager: Changing modify acls to: root
+15/12/14 13:44:17 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/14 13:44:18 INFO Slf4jLogger: Slf4jLogger started
+15/12/14 13:44:18 INFO Utils: Successfully started service 'driverClient' on port 35708.
+15/12/14 13:44:18 INFO ClientEndpoint: Driver successfully submitted as driver-20151214134418-0016-04dc2c87-91d2-4ab2-84b5-391222c6b3c6
+15/12/14 13:44:18 INFO ClientEndpoint: ... waiting before polling master for driver state
+15/12/14 13:44:23 INFO ClientEndpoint: ... polling master for driver state
+15/12/14 13:44:23 INFO ClientEndpoint: State of driver-20151214134418-0016-04dc2c87-91d2-4ab2-84b5-391222c6b3c6 is RUNNING

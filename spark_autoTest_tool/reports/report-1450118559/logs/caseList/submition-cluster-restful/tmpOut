@@ -1,0 +1,13 @@
+Running Spark using the REST application submission protocol.
+15/12/14 13:45:15 INFO RestSubmissionClient: Submitting a request to launch an application in spark://red05:6066.
+15/12/14 13:45:16 INFO RestSubmissionClient: Submission successfully created as driver-20151214134516-0017-eff940f2-5017-497e-8895-73e8e4892cc1. Polling submission state...
+15/12/14 13:45:16 INFO RestSubmissionClient: Submitting a request for the status of submission driver-20151214134516-0017-eff940f2-5017-497e-8895-73e8e4892cc1 in spark://red05:6066.
+15/12/14 13:45:16 INFO RestSubmissionClient: State of driver driver-20151214134516-0017-eff940f2-5017-497e-8895-73e8e4892cc1 is now SUBMITTED.
+15/12/14 13:45:16 INFO RestSubmissionClient: Server responded with CreateSubmissionResponse:
+{
+  "action" : "CreateSubmissionResponse",
+  "message" : "Driver successfully submitted as driver-20151214134516-0017-eff940f2-5017-497e-8895-73e8e4892cc1",
+  "serverSparkVersion" : "1.5.2",
+  "submissionId" : "driver-20151214134516-0017-eff940f2-5017-497e-8895-73e8e4892cc1",
+  "success" : true
+}

@@ -1,4 +1,0 @@
-./caseList/submition-cluster-restful: line 6: ./lib/public.workload.sh: No such file or directory
-./caseList/submition-cluster-restful: line 20: getRestApiDriverStatus: command not found
-./caseList/submition-cluster-restful: line 22: getRestApiDriverName: command not found
-./caseList/submition-cluster-restful: line 25: getJobStatus: command not found

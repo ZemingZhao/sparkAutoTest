@@ -1,4 +1,0 @@
-./caseList/submition-cluster-akka: line 6: ./lib/public.workload.sh: No such file or directory
-./caseList/submition-cluster-akka: line 20: getAkkaDriverStatus: command not found
-./caseList/submition-cluster-akka: line 22: getAkkaDriverName: command not found
-./caseList/submition-cluster-akka: line 25: getJobStatus: command not found
